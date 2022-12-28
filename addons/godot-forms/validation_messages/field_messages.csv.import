@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cowbibe7n0afc"
+
+[deps]
+
+files=["res://addons/godot-forms/validation_messages/field_messages.en.translation", "res://addons/godot-forms/validation_messages/field_messages.fr.translation"]
+
+source_file="res://addons/godot-forms/validation_messages/field_messages.csv"
+dest_files=["res://addons/godot-forms/validation_messages/field_messages.en.translation", "res://addons/godot-forms/validation_messages/field_messages.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=0

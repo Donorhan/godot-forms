@@ -1,0 +1,228 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk6q7n2kth3lc"]
+
+[ext_resource type="Theme" path="res://addons/godot-forms/themes/default/godot_forms_default.tres" id="1_0tnrn"]
+[ext_resource type="Script" path="res://addons/godot-forms/nodes/core/form.gd" id="2_aogrt"]
+[ext_resource type="PackedScene" uid="uid://cdwiipj2f24q6" path="res://addons/godot-forms/nodes/input-components/form_field_line_edit.tscn" id="4_6f8ka"]
+[ext_resource type="Texture2D" uid="uid://wygk7bt4yg3b" path="res://ui/icons/email-outline.svg" id="5_3ibgt"]
+[ext_resource type="PackedScene" uid="uid://b0ihgrup3vymx" path="res://addons/godot-forms/nodes/input-components/form_field_checkbox.tscn" id="5_3u6dg"]
+[ext_resource type="Texture2D" uid="uid://cve6sq84qch63" path="res://ui/icons/lock-outline.svg" id="6_xeutj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnlox"]
+
+[node name="SignUpScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Form" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0tnrn")
+theme_type_variation = &"Form"
+script = ExtResource("2_aogrt")
+field_rules = {
+"email": "required|email",
+"password": "required|min:4|max:8",
+"tos": "required"
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Form"]
+offset_right = 400.0
+offset_bottom = 394.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Form/MarginContainer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 385.0
+offset_bottom = 379.0
+
+[node name="Title" type="Label" parent="Form/MarginContainer/VBoxContainer"]
+offset_right = 370.0
+offset_bottom = 33.0
+theme_type_variation = &"FormTitle"
+text = "Sign Up"
+
+[node name="Description" type="Label" parent="Form/MarginContainer/VBoxContainer"]
+offset_top = 37.0
+offset_right = 370.0
+offset_bottom = 58.0
+theme_type_variation = &"FormDescription"
+text = "Create a new account to save your progression"
+
+[node name="HSeparator" type="HSeparator" parent="Form/MarginContainer/VBoxContainer"]
+offset_top = 62.0
+offset_right = 370.0
+offset_bottom = 72.0
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxFlat_bnlox")
+
+[node name="EmailFormField" parent="Form/MarginContainer/VBoxContainer" instance=ExtResource("4_6f8ka")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 76.0
+offset_right = 370.0
+offset_bottom = 166.0
+grow_horizontal = 1
+grow_vertical = 1
+label = "Email"
+identifier = "email"
+
+[node name="VBoxContainer" parent="Form/MarginContainer/VBoxContainer/EmailFormField" index="0"]
+offset_right = 370.0
+offset_bottom = 90.0
+
+[node name="FieldLabel" parent="Form/MarginContainer/VBoxContainer/EmailFormField/VBoxContainer" index="0"]
+offset_right = 370.0
+offset_bottom = 23.0
+
+[node name="FieldContainer" parent="Form/MarginContainer/VBoxContainer/EmailFormField/VBoxContainer" index="1"]
+offset_top = 27.0
+offset_right = 370.0
+offset_bottom = 66.0
+
+[node name="HBoxContainer" parent="Form/MarginContainer/VBoxContainer/EmailFormField/VBoxContainer/FieldContainer" index="0"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 362.0
+
+[node name="Icon" parent="Form/MarginContainer/VBoxContainer/EmailFormField/VBoxContainer/FieldContainer/HBoxContainer" index="0"]
+visible = true
+offset_top = 1.0
+offset_right = 20.0
+offset_bottom = 21.0
+texture = ExtResource("5_3ibgt")
+
+[node name="LineEdit" parent="Form/MarginContainer/VBoxContainer/EmailFormField/VBoxContainer/FieldContainer/HBoxContainer" index="1"]
+offset_left = 24.0
+offset_right = 354.0
+offset_bottom = 23.0
+
+[node name="ErrorLabel" parent="Form/MarginContainer/VBoxContainer/EmailFormField/VBoxContainer" index="2"]
+offset_top = 70.0
+offset_right = 370.0
+offset_bottom = 90.0
+
+[node name="PasswordFormField" parent="Form/MarginContainer/VBoxContainer" instance=ExtResource("4_6f8ka")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 170.0
+offset_right = 370.0
+offset_bottom = 260.0
+grow_horizontal = 1
+grow_vertical = 1
+label = "Password"
+identifier = "password"
+
+[node name="VBoxContainer" parent="Form/MarginContainer/VBoxContainer/PasswordFormField" index="0"]
+offset_right = 370.0
+offset_bottom = 90.0
+
+[node name="FieldLabel" parent="Form/MarginContainer/VBoxContainer/PasswordFormField/VBoxContainer" index="0"]
+offset_right = 370.0
+offset_bottom = 23.0
+
+[node name="FieldContainer" parent="Form/MarginContainer/VBoxContainer/PasswordFormField/VBoxContainer" index="1"]
+offset_top = 27.0
+offset_right = 370.0
+offset_bottom = 66.0
+
+[node name="HBoxContainer" parent="Form/MarginContainer/VBoxContainer/PasswordFormField/VBoxContainer/FieldContainer" index="0"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 362.0
+
+[node name="Icon" parent="Form/MarginContainer/VBoxContainer/PasswordFormField/VBoxContainer/FieldContainer/HBoxContainer" index="0"]
+visible = true
+offset_top = 1.0
+offset_right = 20.0
+offset_bottom = 21.0
+texture = ExtResource("6_xeutj")
+
+[node name="LineEdit" parent="Form/MarginContainer/VBoxContainer/PasswordFormField/VBoxContainer/FieldContainer/HBoxContainer" index="1"]
+offset_left = 24.0
+offset_right = 354.0
+offset_bottom = 23.0
+secret = true
+
+[node name="ErrorLabel" parent="Form/MarginContainer/VBoxContainer/PasswordFormField/VBoxContainer" index="2"]
+offset_top = 70.0
+offset_right = 370.0
+offset_bottom = 90.0
+
+[node name="CheckBoxFormField" parent="Form/MarginContainer/VBoxContainer" instance=ExtResource("5_3u6dg")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 264.0
+offset_right = 370.0
+offset_bottom = 322.0
+grow_horizontal = 1
+grow_vertical = 1
+identifier = "tos"
+
+[node name="VBoxContainer" parent="Form/MarginContainer/VBoxContainer/CheckBoxFormField" index="0"]
+layout_mode = 3
+offset_right = 370.0
+offset_bottom = 58.0
+
+[node name="FieldLabel" parent="Form/MarginContainer/VBoxContainer/CheckBoxFormField/VBoxContainer" index="0"]
+layout_mode = 3
+offset_right = 370.0
+offset_bottom = 23.0
+
+[node name="FieldContainer" parent="Form/MarginContainer/VBoxContainer/CheckBoxFormField/VBoxContainer" index="1"]
+layout_mode = 3
+offset_right = 370.0
+offset_bottom = 34.0
+
+[node name="HBoxContainer" parent="Form/MarginContainer/VBoxContainer/CheckBoxFormField/VBoxContainer/FieldContainer" index="0"]
+layout_mode = 3
+offset_right = 370.0
+offset_bottom = 34.0
+
+[node name="Icon" parent="Form/MarginContainer/VBoxContainer/CheckBoxFormField/VBoxContainer/FieldContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 3
+offset_top = 2.0
+offset_right = 30.0
+offset_bottom = 32.0
+ignore_texture_size = false
+stretch_mode = 3
+
+[node name="CheckBox" parent="Form/MarginContainer/VBoxContainer/CheckBoxFormField/VBoxContainer/FieldContainer/HBoxContainer" index="1"]
+offset_right = 370.0
+offset_bottom = 34.0
+text = "I accept the term of services"
+
+[node name="ErrorLabel" parent="Form/MarginContainer/VBoxContainer/CheckBoxFormField/VBoxContainer" index="2"]
+layout_mode = 3
+offset_top = 38.0
+offset_right = 370.0
+offset_bottom = 58.0
+
+[node name="SubmitButton" type="Button" parent="Form/MarginContainer/VBoxContainer"]
+offset_top = 326.0
+offset_right = 370.0
+offset_bottom = 364.0
+text = " Log In"
+
+[connection signal="pressed" from="Form/MarginContainer/VBoxContainer/SubmitButton" to="Form" method="submit"]
+
+[editable path="Form/MarginContainer/VBoxContainer/EmailFormField"]
+[editable path="Form/MarginContainer/VBoxContainer/PasswordFormField"]
+[editable path="Form/MarginContainer/VBoxContainer/CheckBoxFormField"]

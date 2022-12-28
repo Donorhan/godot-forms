@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdwiipj2f24q6"]
+
+[ext_resource type="PackedScene" uid="uid://bqwfnleix0nlb" path="res://addons/godot-forms/nodes/input-components/form_field.tscn" id="1_6q2xm"]
+[ext_resource type="Script" path="res://addons/godot-forms/nodes/input-components/form_field_line_edit.gd" id="2_gj3x4"]
+
+[node name="LineEditFormField" instance=ExtResource("1_6q2xm")]
+script = ExtResource("2_gj3x4")
+check_on_text_changed = true
+input_path = NodePath("VBoxContainer/FieldContainer/HBoxContainer/LineEdit")
+
+[node name="FieldContainer" parent="VBoxContainer" index="1"]
+theme_type_variation = &"FieldContainer"
+
+[node name="Icon" parent="VBoxContainer/FieldContainer/HBoxContainer" index="0"]
+visible = false
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/FieldContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="focus_entered" from="VBoxContainer/FieldContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_focus_entered"]
+[connection signal="focus_exited" from="VBoxContainer/FieldContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_focus_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/FieldContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/FieldContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_mouse_exited"]
+[connection signal="text_changed" from="VBoxContainer/FieldContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]

@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://dbdoa4sgg0y3l"]
+
+[resource]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+draw_center = false

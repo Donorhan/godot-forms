@@ -1,0 +1,5 @@
+,en,fr
+FIELD_INVALID_EMAIL,The field must be a valid email address,Le champ doit être une adresse email valide
+FIELD_REQUIRED,The field is required,Le champ est obligatoire
+FIELD_INVALID_MIN,The field must have a minimum length of [value] characters,Le champ doit avoir une taille minimum de [value] caractères
+FIELD_INVALID_MAX,The field must have a maximum length of [value] characters,Le champ doit avoir une taille maximum de [value] caractères

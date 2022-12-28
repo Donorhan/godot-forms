@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ihgrup3vymx"]
+
+[ext_resource type="PackedScene" uid="uid://bqwfnleix0nlb" path="res://addons/godot-forms/nodes/input-components/form_field.tscn" id="1_6q2xm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8pjvw"]
+
+[node name="CheckBoxFormField" instance=ExtResource("1_6q2xm")]
+input_path = NodePath("VBoxContainer/FieldContainer/HBoxContainer/CheckBox")
+
+[node name="FieldLabel" parent="VBoxContainer" index="0"]
+visible = false
+
+[node name="FieldContainer" parent="VBoxContainer" index="1"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8pjvw")
+
+[node name="Icon" parent="VBoxContainer/FieldContainer/HBoxContainer" index="0"]
+visible = false
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/FieldContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/FieldContainer/HBoxContainer/CheckBox" to="." method="ask_validation"]

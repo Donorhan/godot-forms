@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=15 format=3]
+
+[ext_resource type="StyleBox" uid="uid://crachjjxppm5j" path="res://addons/godot-forms/themes/default/buttons/button_normal.tres" id="1_0hfxd"]
+[ext_resource type="StyleBox" uid="uid://b1vdygjxvd1xm" path="res://addons/godot-forms/themes/default/buttons/button_hover.tres" id="1_a3gxp"]
+[ext_resource type="StyleBox" uid="uid://dbdoa4sgg0y3l" path="res://addons/godot-forms/themes/default/checkbox/checkbox_normal.tres" id="1_dri6k"]
+[ext_resource type="StyleBox" uid="uid://bmmvtm88wn5j8" path="res://addons/godot-forms/themes/default/checkbox/checkbox_focus.tres" id="1_qmkyb"]
+[ext_resource type="StyleBox" uid="uid://b66mlssdby8h4" path="res://addons/godot-forms/themes/default/checkbox/checkbox_hover.tres" id="2_8m3qy"]
+[ext_resource type="StyleBox" uid="uid://wv42ens4l8q6" path="res://addons/godot-forms/themes/default/buttons/button_pressed.tres" id="3_2clht"]
+[ext_resource type="Texture2D" uid="uid://b4c4nsina8lxk" path="res://addons/godot-forms/themes/default/icons/checkbox-outline.svg" id="4_l3y0o"]
+[ext_resource type="StyleBox" uid="uid://dcr4j3kj3omgc" path="res://addons/godot-forms/themes/default/form/form.tres" id="4_xc8gs"]
+[ext_resource type="Texture2D" uid="uid://cdhomen5xvya7" path="res://addons/godot-forms/themes/default/icons/checkbox-blank-outline.svg" id="5_phtcn"]
+[ext_resource type="StyleBox" uid="uid://djat24g657nse" path="res://addons/godot-forms/themes/default/field-container/field_container_focus.tres" id="9_v6bjr"]
+[ext_resource type="StyleBox" uid="uid://b3vxk3pf58uo2" path="res://addons/godot-forms/themes/default/field-container/field_container_hover.tres" id="10_5f20d"]
+[ext_resource type="StyleBox" uid="uid://b8ujr8d8bwrcb" path="res://addons/godot-forms/themes/default/field/field_line_edit_normal.tres" id="10_7h57b"]
+[ext_resource type="StyleBox" uid="uid://dqs2jpynpoa2r" path="res://addons/godot-forms/themes/default/field-container/field_container_normal.tres" id="11_ka1tx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7p0iy"]
+
+[resource]
+Button/font_sizes/font_size = 15
+Button/styles/focus = ExtResource("1_0hfxd")
+Button/styles/hover = ExtResource("1_a3gxp")
+Button/styles/normal = ExtResource("1_0hfxd")
+Button/styles/pressed = ExtResource("3_2clht")
+CheckBox/constants/h_separation = 10
+CheckBox/font_sizes/font_size = 14
+CheckBox/icons/checked = ExtResource("4_l3y0o")
+CheckBox/icons/radio_checked = ExtResource("4_l3y0o")
+CheckBox/icons/radio_unchecked = ExtResource("5_phtcn")
+CheckBox/icons/unchecked = ExtResource("5_phtcn")
+CheckBox/styles/focus = ExtResource("1_qmkyb")
+CheckBox/styles/hover = ExtResource("2_8m3qy")
+CheckBox/styles/normal = ExtResource("1_dri6k")
+CheckBox/styles/pressed = ExtResource("1_dri6k")
+ErrorLabel/colors/font_color = Color(0.67451, 0.223529, 0.192157, 1)
+ErrorLabel/font_sizes/font_size = 10
+FieldContainer/base_type = &"PanelContainer"
+FieldContainer/styles/focus = ExtResource("9_v6bjr")
+FieldContainer/styles/hover = ExtResource("10_5f20d")
+FieldContainer/styles/panel = ExtResource("11_ka1tx")
+FieldLabel/font_sizes/font_size = 14
+Form/base_type = &"PanelContainer"
+Form/styles/panel = ExtResource("4_xc8gs")
+FormDescription/base_type = &"Label"
+FormDescription/colors/font_color = Color(0.647059, 0.647059, 0.647059, 1)
+FormDescription/font_sizes/font_size = 13
+FormTitle/base_type = &"Label"
+FormTitle/constants/line_spacing = 5
+FormTitle/font_sizes/font_size = 20
+LineEdit/styles/focus = ExtResource("10_7h57b")
+LineEdit/styles/normal = ExtResource("10_7h57b")
+UIFormField/base_type = &"PanelContainer"
+UIFormField/styles/panel = SubResource("StyleBoxEmpty_7p0iy")

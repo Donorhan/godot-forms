@@ -1,0 +1,100 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Object",
+"class": &"DataValidator",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/nodes/core/data_validator.gd"
+}, {
+"base": "ValidationRule",
+"class": &"EmailValidationRule",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/validation_rules/email_validation_rule.gd"
+}, {
+"base": "PanelContainer",
+"class": &"Form",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/nodes/core/form.gd"
+}, {
+"base": "PanelContainer",
+"class": &"FormField",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/nodes/core/form_field.gd"
+}, {
+"base": "ValidationRule",
+"class": &"MaxValidationRule",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/validation_rules/max_validation_rule.gd"
+}, {
+"base": "ValidationRule",
+"class": &"MinValidationRule",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/validation_rules/min_validation_rule.gd"
+}, {
+"base": "ValidationRule",
+"class": &"NumberValidationRule",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/validation_rules/number_validation_rule.gd"
+}, {
+"base": "ValidationRule",
+"class": &"RequiredValidationRule",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/validation_rules/required_validation_rule.gd"
+}, {
+"base": "FormField",
+"class": &"UIFormField",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/nodes/input-components/form_field.gd"
+}, {
+"base": "UIFormField",
+"class": &"UILineEdit",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/nodes/input-components/form_field_line_edit.gd"
+}, {
+"base": "Object",
+"class": &"ValidationRule",
+"language": &"GDScript",
+"path": "res://addons/godot-forms/validation_rules/validation_rule.gd"
+}]
+_global_script_class_icons={
+"DataValidator": "",
+"EmailValidationRule": "",
+"Form": "res://addons/godot-forms/icons/form.svg",
+"FormField": "",
+"MaxValidationRule": "",
+"MinValidationRule": "",
+"NumberValidationRule": "",
+"RequiredValidationRule": "",
+"UIFormField": "res://addons/godot-forms/icons/form-field.svg",
+"UILineEdit": "res://addons/godot-forms/icons/form-field.svg",
+"ValidationRule": ""
+}
+
+[application]
+
+config/name="godot-forms"
+run/main_scene="res://ui/screens.tscn"
+config/features=PackedStringArray("4.0", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-forms/plugin.cfg")
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/godot-forms/validation_messages/field_messages.en.translation", "res://addons/godot-forms/validation_messages/field_messages.fr.translation")
+locale/test="en"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.113725, 0.113725, 0.113725, 1)

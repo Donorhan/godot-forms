@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://vhnt4vxagxkg"]
+
+[ext_resource type="PackedScene" uid="uid://cvfgk82iahvoc" path="res://ui/log_in_screen.tscn" id="1_f3jg8"]
+[ext_resource type="PackedScene" uid="uid://bk6q7n2kth3lc" path="res://ui/sign_up_screen.tscn" id="2_0fe7p"]
+
+[node name="Screens" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -452.0
+offset_right = 452.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LogInScreen" parent="CenterContainer/HBoxContainer" instance=ExtResource("1_f3jg8")]
+visible = false
+layout_mode = 2
+
+[node name="SignUpScreen" parent="CenterContainer/HBoxContainer" instance=ExtResource("2_0fe7p")]
+layout_mode = 2

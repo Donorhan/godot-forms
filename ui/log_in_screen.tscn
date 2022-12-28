@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvfgk82iahvoc"]
+
+[ext_resource type="Theme" path="res://addons/godot-forms/themes/default/godot_forms_default.tres" id="1_l3wlw"]
+[ext_resource type="Script" path="res://addons/godot-forms/nodes/core/form.gd" id="2_gwh47"]
+[ext_resource type="PackedScene" uid="uid://cdwiipj2f24q6" path="res://addons/godot-forms/nodes/input-components/form_field_line_edit.tscn" id="4_mrk6p"]
+
+[node name="LogInScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Form" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(400, 318)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -159.0
+offset_right = 200.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l3wlw")
+theme_type_variation = &"Form"
+script = ExtResource("2_gwh47")
+field_rules = {
+"email": "required|email",
+"password": "required|min:4"
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Form"]
+offset_right = 400.0
+offset_bottom = 318.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Form/MarginContainer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 385.0
+offset_bottom = 303.0
+alignment = 1
+
+[node name="Title" type="Label" parent="Form/MarginContainer/VBoxContainer"]
+offset_right = 370.0
+offset_bottom = 33.0
+theme_type_variation = &"FormTitle"
+text = "Log In"
+
+[node name="Description" type="Label" parent="Form/MarginContainer/VBoxContainer"]
+offset_top = 37.0
+offset_right = 370.0
+offset_bottom = 58.0
+theme_type_variation = &"FormDescription"
+text = "Welcome back!"
+
+[node name="EmailFormField" parent="Form/MarginContainer/VBoxContainer" instance=ExtResource("4_mrk6p")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 62.0
+offset_right = 370.0
+offset_bottom = 152.0
+grow_horizontal = 1
+grow_vertical = 1
+label = "Email"
+identifier = "email"
+
+[node name="PasswordFormField" parent="Form/MarginContainer/VBoxContainer" instance=ExtResource("4_mrk6p")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 156.0
+offset_right = 370.0
+offset_bottom = 246.0
+grow_horizontal = 1
+grow_vertical = 1
+label = "Password"
+identifier = "password"
+
+[node name="SubmitButton" type="Button" parent="Form/MarginContainer/VBoxContainer"]
+offset_top = 250.0
+offset_right = 370.0
+offset_bottom = 288.0
+text = " Log In"
+
+[connection signal="pressed" from="Form/MarginContainer/VBoxContainer/SubmitButton" to="Form" method="submit"]
