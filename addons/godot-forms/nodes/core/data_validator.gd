@@ -19,6 +19,12 @@ func _init() -> void:
     _validation_rules = _default_validation_rules.duplicate()
 
 
+func _notification(what: int) -> void:
+    if what == NOTIFICATION_PREDELETE:
+        for rule in _validation_rules.values():
+            rule.free()
+
+
 func add_rule(rule_key: String, rule_validation: ValidationRule) -> void:
     _validation_rules[rule_key] = rule_validation
 

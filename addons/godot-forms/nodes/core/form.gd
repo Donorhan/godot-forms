@@ -22,6 +22,11 @@ func _ready() -> void:
     find_and_attach_form_fields()
 
 
+func _notification(what: int) -> void:
+    if what == NOTIFICATION_PREDELETE:
+        data_validator.free()
+
+
 func submit() -> void:
     var values = _get_form_fields_values()
     data_validator.execute(values)
