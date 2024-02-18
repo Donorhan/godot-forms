@@ -1,5 +1,5 @@
-class_name UIFormField extends FormField
 @icon("../../icons/form-field.svg")
+class_name UIFormField extends FormField
 
 @export var label : String = ""
 
@@ -8,13 +8,13 @@ class_name UIFormField extends FormField
 @onready var _field_label = %FieldLabel as Label
 
 func _ready() -> void:
-    super._ready()
+	super._ready()
 
-    if label.length() > 0:
-        _field_label.text = label
+	if label.length() > 0:
+		_field_label.text = label
 
 
 func set_error(error: String) -> void:
-    super.set_error(error)
-    _error_text.text = error
+	super.set_error(error)
+	_error_text.text = error
 
